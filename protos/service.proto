@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.generic";
+option java_generate_equals_and_hash = true;
+
+import "entity.proto";
+
+service Auth {
+  rpc createUser(CreateUserRequest) returns (CreateUserResponse);
+  rpc resetUsername(ResetUsernameRequest) returns (ResetResponse);
+  rpc resetPassword(ResetPasswordRequest) returns (ResetResponse);
+  rpc checkValid(UserValidityCheckRequest) returns (AuthResponse);
+  rpc issueToken(TokenIssueRequest) returns (TokenIssueResponse);
+  rpc revokeToken(TokenRevokeRequest) returns (TokenRevokeResponse);
+}

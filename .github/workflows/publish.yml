@@ -1,0 +1,35 @@
+name: Publish package to Github Packages
+
+on:
+  push:
+    branches: [ "*" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+        
+    permissions:
+      contents: read
+      packages: write
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+    
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        server-id: github
+        settings-path: ${{ github.workspace }}
+    
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
+    
+    - name: Publish package
+      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml -X
+      env:
+        GITHUB_TOKEN: ${{ secrets.JAVA_PUBLISH_TOKEN }}
