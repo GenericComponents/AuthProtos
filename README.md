@@ -1,0 +1,2 @@
+# AuthProtos
+Authentication proto definitions
