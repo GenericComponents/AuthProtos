@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.generic";
+option java_generate_equals_and_hash = true;
+
+// Error and success message types
+enum Error {
+  USER_ALREADY_EXISTS = 0;
+  WRONG_USERNAME_OR_PASSWORD = 1;
+  PASSWORD_EXPIRED = 2;
+  PASSWORD_IDENTICAL_TO_PREVIOUS_SET = 3;
+  RESET_REQUEST_BEFORE_BUFFER_TIME = 4;
+  ACCESS_TOKEN_EXPIRED = 5;
+  INVALID_ACCESS_TOKEN = 6;
+  REFRESH_TOKEN_EXPIRED = 7;
+  INVALID_REFRESH_TOKEN = 8;
+  INVALID_REFRESH_TOKEN_ISSUE_POLICY = 9;
+  TOO_MANY_LOGIN_ATTEMPTS = 10;
+  INTERNAL_SERVER_ERROR = 11;
+}
+
+enum Success {
+  NEW_USER_CREATED = 0;
+  USERNAME_CHANGED_SUCCESSFULLY = 1;
+  PASSWORD_RESET_SUCCESSFULLY = 2;
+  AUTHENTICATED_USER = 3;
+  TOKEN_ISSUED_SUCCESSFULLY = 4;
+  TOKEN_REVOKED_SUCCESSFULLY = 5;
+}
+
+// Request objects
+message CreateUserRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message ResetUsernameRequest {
+  string username = 1;
+  string newUsername = 2;
+}
+
+message ResetPasswordRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message UnauthenticatedUserRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message UserValidityCheckRequest {
+  string accessToken = 1;
+}
+
+message TokenIssueRequest {
+  message AuthenticatedUserRequest {
+    string refreshToken = 1;
+  }
+
+  oneof request {
+    UnauthenticatedUserRequest unauthenticated = 1;
+    AuthenticatedUserRequest authenticated = 2;
+  }
+}
+
+message TokenRevokeRequest {
+  string username = 1;
+}
+
+// Response Objects
+message ErrorResponse {
+  Error error = 1;
+  string message = 2;
+}
+
+message CreateUserResponse {
+  Success status = 1;
+  string message = 2;
+  string accessToken = 3;
+  string refreshToken = 4;
+}
+
+message ResetResponse {
+  Success status = 1;
+  string message = 2;
+}
+
+message AuthResponse {
+  Success status = 1;
+  string message = 2;
+  optional string accessToken = 3;
+}
+
+message TokenIssueResponse {
+  Success status = 1;
+  string message = 2;
+  string accessToken = 3;
+  optional string refreshToken = 4;
+}
+
+message TokenRevokeResponse {
+  Success status = 1;
+  string message = 2;
+}
