@@ -54,7 +54,8 @@
 		<repository>
 			<id>github</id>
 			<name>Github Packages</name>
-			<url>https://maven.pkg.github.com/generic/auth</url>
+			<url>https://maven.pkg.github.com/generic_components/maven_packages</url>
+			<uniqueVersion>false</uniqueVersion>
 		</repository>
 	</distributionManagement>
 
