@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  	<modelVersion>4.0.0</modelVersion>
-	
-    <groupId>org.generic</groupId>
-    <artifactId>auth</artifactId>
-    <version>1.0.0</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.generic</groupId>
+	<artifactId>auth</artifactId>
+	<version>1.1.0</version>
 
 	<properties>
 		<java.version>17</java.version>
@@ -16,8 +17,8 @@
 		<jackson.databind.version>2.14.2</jackson.databind.version>
 	</properties>
 
-    <dependencies>
-        <!--	GRPC dependencies 	-->
+	<dependencies>
+		<!--	GRPC dependencies 	-->
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>annotations-api</artifactId>
@@ -48,11 +49,14 @@
 			<artifactId>grpc-stub</artifactId>
 			<version>${grpc.java.version}</version>
 		</dependency>
-    </dependencies>
+	</dependencies>
 
-    <distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>github</id>
+			<name>Github Packages</name>
+			<url>https://maven.pkg.github.com/GenericComponents/AuthProtos</url>
+			<uniqueVersion>false</uniqueVersion>
 		</repository>
 	</distributionManagement>
 
