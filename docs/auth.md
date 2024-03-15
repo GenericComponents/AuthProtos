@@ -20,6 +20,7 @@
     - [UserValidityCheckRequest](#-UserValidityCheckRequest)
   
     - [Error](#-Error)
+    - [Provider](#-Provider)
     - [Success](#-Success)
   
 - [service.proto](#service-proto)
@@ -256,6 +257,7 @@ Response Objects
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | accessToken | [string](#string) |  |  |
+| provider | [Provider](#Provider) | optional |  |
 
 
 
@@ -283,6 +285,17 @@ Error and success message types
 | INVALID_REFRESH_TOKEN_ISSUE_POLICY | 9 |  |
 | TOO_MANY_LOGIN_ATTEMPTS | 10 |  |
 | INTERNAL_SERVER_ERROR | 11 |  |
+
+
+
+<a name="-Provider"></a>
+
+### Provider
+
+
+| Name | Number | Description |
+| ---- | ------ | ----------- |
+| GOOGLE | 0 |  |
 
 
 
@@ -332,7 +345,7 @@ Error and success message types
 | createUser | [.CreateUserRequest](#CreateUserRequest) | [.CreateUserResponse](#CreateUserResponse) |  |
 | resetUsername | [.ResetUsernameRequest](#ResetUsernameRequest) | [.ResetResponse](#ResetResponse) |  |
 | resetPassword | [.ResetPasswordRequest](#ResetPasswordRequest) | [.ResetResponse](#ResetResponse) |  |
-| checkValid | [.UserValidityCheckRequest](#UserValidityCheckRequest) | [.AuthResponse](#AuthResponse) |  |
+| authenticateUser | [.UserValidityCheckRequest](#UserValidityCheckRequest) | [.AuthResponse](#AuthResponse) |  |
 | issueToken | [.TokenIssueRequest](#TokenIssueRequest) | [.TokenIssueResponse](#TokenIssueResponse) |  |
 | revokeToken | [.TokenRevokeRequest](#TokenRevokeRequest) | [.TokenRevokeResponse](#TokenRevokeResponse) |  |
 
