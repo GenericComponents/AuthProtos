@@ -99,42 +99,44 @@ public final class Entity {
       "Username\030\002 \001(\t\":\n\024ResetPasswordRequest\022\020" +
       "\n\010username\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"@\n\032Un" +
       "authenticatedUserRequest\022\020\n\010username\030\001 \001" +
-      "(\t\022\020\n\010password\030\002 \001(\t\"/\n\030UserValidityChec" +
-      "kRequest\022\023\n\013accessToken\030\001 \001(\t\"\316\001\n\021TokenI" +
-      "ssueRequest\0226\n\017unauthenticated\030\001 \001(\0132\033.U" +
-      "nauthenticatedUserRequestH\000\022D\n\rauthentic" +
-      "ated\030\002 \001(\0132+.TokenIssueRequest.Authentic" +
-      "atedUserRequestH\000\0320\n\030AuthenticatedUserRe" +
-      "quest\022\024\n\014refreshToken\030\001 \001(\tB\t\n\007request\"&" +
-      "\n\022TokenRevokeRequest\022\020\n\010username\030\001 \001(\t\"7" +
-      "\n\rErrorResponse\022\025\n\005error\030\001 \001(\0162\006.Error\022\017" +
-      "\n\007message\030\002 \001(\t\"j\n\022CreateUserResponse\022\030\n" +
-      "\006status\030\001 \001(\0162\010.Success\022\017\n\007message\030\002 \001(\t" +
-      "\022\023\n\013accessToken\030\003 \001(\t\022\024\n\014refreshToken\030\004 " +
-      "\001(\t\":\n\rResetResponse\022\030\n\006status\030\001 \001(\0162\010.S" +
-      "uccess\022\017\n\007message\030\002 \001(\t\"c\n\014AuthResponse\022" +
-      "\030\n\006status\030\001 \001(\0162\010.Success\022\017\n\007message\030\002 \001" +
-      "(\t\022\030\n\013accessToken\030\003 \001(\tH\000\210\001\001B\016\n\014_accessT" +
-      "oken\"\200\001\n\022TokenIssueResponse\022\030\n\006status\030\001 " +
-      "\001(\0162\010.Success\022\017\n\007message\030\002 \001(\t\022\023\n\013access" +
-      "Token\030\003 \001(\t\022\031\n\014refreshToken\030\004 \001(\tH\000\210\001\001B\017" +
-      "\n\r_refreshToken\"@\n\023TokenRevokeResponse\022\030" +
-      "\n\006status\030\001 \001(\0162\010.Success\022\017\n\007message\030\002 \001(" +
-      "\t*\356\002\n\005Error\022\027\n\023USER_ALREADY_EXISTS\020\000\022\036\n\032" +
-      "WRONG_USERNAME_OR_PASSWORD\020\001\022\024\n\020PASSWORD" +
-      "_EXPIRED\020\002\022&\n\"PASSWORD_IDENTICAL_TO_PREV" +
-      "IOUS_SET\020\003\022$\n RESET_REQUEST_BEFORE_BUFFE" +
-      "R_TIME\020\004\022\030\n\024ACCESS_TOKEN_EXPIRED\020\005\022\030\n\024IN" +
-      "VALID_ACCESS_TOKEN\020\006\022\031\n\025REFRESH_TOKEN_EX" +
-      "PIRED\020\007\022\031\n\025INVALID_REFRESH_TOKEN\020\010\022&\n\"IN" +
-      "VALID_REFRESH_TOKEN_ISSUE_POLICY\020\t\022\033\n\027TO" +
-      "O_MANY_LOGIN_ATTEMPTS\020\n\022\031\n\025INTERNAL_SERV" +
-      "ER_ERROR\020\013*\272\001\n\007Success\022\024\n\020NEW_USER_CREAT" +
-      "ED\020\000\022!\n\035USERNAME_CHANGED_SUCCESSFULLY\020\001\022" +
-      "\037\n\033PASSWORD_RESET_SUCCESSFULLY\020\002\022\026\n\022AUTH" +
-      "ENTICATED_USER\020\003\022\035\n\031TOKEN_ISSUED_SUCCESS" +
-      "FULLY\020\004\022\036\n\032TOKEN_REVOKED_SUCCESSFULLY\020\005B" +
-      "\022\n\013org.genericP\001\240\001\001b\006proto3"
+      "(\t\022\020\n\010password\030\002 \001(\t\"^\n\030UserValidityChec" +
+      "kRequest\022\023\n\013accessToken\030\001 \001(\t\022 \n\010provide" +
+      "r\030\002 \001(\0162\t.ProviderH\000\210\001\001B\013\n\t_provider\"\316\001\n" +
+      "\021TokenIssueRequest\0226\n\017unauthenticated\030\001 " +
+      "\001(\0132\033.UnauthenticatedUserRequestH\000\022D\n\rau" +
+      "thenticated\030\002 \001(\0132+.TokenIssueRequest.Au" +
+      "thenticatedUserRequestH\000\0320\n\030Authenticate" +
+      "dUserRequest\022\024\n\014refreshToken\030\001 \001(\tB\t\n\007re" +
+      "quest\"&\n\022TokenRevokeRequest\022\020\n\010username\030" +
+      "\001 \001(\t\"7\n\rErrorResponse\022\025\n\005error\030\001 \001(\0162\006." +
+      "Error\022\017\n\007message\030\002 \001(\t\"j\n\022CreateUserResp" +
+      "onse\022\030\n\006status\030\001 \001(\0162\010.Success\022\017\n\007messag" +
+      "e\030\002 \001(\t\022\023\n\013accessToken\030\003 \001(\t\022\024\n\014refreshT" +
+      "oken\030\004 \001(\t\":\n\rResetResponse\022\030\n\006status\030\001 " +
+      "\001(\0162\010.Success\022\017\n\007message\030\002 \001(\t\"c\n\014AuthRe" +
+      "sponse\022\030\n\006status\030\001 \001(\0162\010.Success\022\017\n\007mess" +
+      "age\030\002 \001(\t\022\030\n\013accessToken\030\003 \001(\tH\000\210\001\001B\016\n\014_" +
+      "accessToken\"\200\001\n\022TokenIssueResponse\022\030\n\006st" +
+      "atus\030\001 \001(\0162\010.Success\022\017\n\007message\030\002 \001(\t\022\023\n" +
+      "\013accessToken\030\003 \001(\t\022\031\n\014refreshToken\030\004 \001(\t" +
+      "H\000\210\001\001B\017\n\r_refreshToken\"@\n\023TokenRevokeRes" +
+      "ponse\022\030\n\006status\030\001 \001(\0162\010.Success\022\017\n\007messa" +
+      "ge\030\002 \001(\t*\356\002\n\005Error\022\027\n\023USER_ALREADY_EXIST" +
+      "S\020\000\022\036\n\032WRONG_USERNAME_OR_PASSWORD\020\001\022\024\n\020P" +
+      "ASSWORD_EXPIRED\020\002\022&\n\"PASSWORD_IDENTICAL_" +
+      "TO_PREVIOUS_SET\020\003\022$\n RESET_REQUEST_BEFOR" +
+      "E_BUFFER_TIME\020\004\022\030\n\024ACCESS_TOKEN_EXPIRED\020" +
+      "\005\022\030\n\024INVALID_ACCESS_TOKEN\020\006\022\031\n\025REFRESH_T" +
+      "OKEN_EXPIRED\020\007\022\031\n\025INVALID_REFRESH_TOKEN\020" +
+      "\010\022&\n\"INVALID_REFRESH_TOKEN_ISSUE_POLICY\020" +
+      "\t\022\033\n\027TOO_MANY_LOGIN_ATTEMPTS\020\n\022\031\n\025INTERN" +
+      "AL_SERVER_ERROR\020\013*\272\001\n\007Success\022\024\n\020NEW_USE" +
+      "R_CREATED\020\000\022!\n\035USERNAME_CHANGED_SUCCESSF" +
+      "ULLY\020\001\022\037\n\033PASSWORD_RESET_SUCCESSFULLY\020\002\022" +
+      "\026\n\022AUTHENTICATED_USER\020\003\022\035\n\031TOKEN_ISSUED_" +
+      "SUCCESSFULLY\020\004\022\036\n\032TOKEN_REVOKED_SUCCESSF" +
+      "ULLY\020\005*\026\n\010Provider\022\n\n\006GOOGLE\020\000B\022\n\013org.ge" +
+      "nericP\001\240\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -169,7 +171,7 @@ public final class Entity {
     internal_static_UserValidityCheckRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_UserValidityCheckRequest_descriptor,
-        new java.lang.String[] { "AccessToken", });
+        new java.lang.String[] { "AccessToken", "Provider", "Provider", });
     internal_static_TokenIssueRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_TokenIssueRequest_fieldAccessorTable = new

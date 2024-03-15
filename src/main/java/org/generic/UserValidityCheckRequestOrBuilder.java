@@ -18,4 +18,20 @@ public interface UserValidityCheckRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getAccessTokenBytes();
+
+  /**
+   * <code>optional .Provider provider = 2;</code>
+   * @return Whether the provider field is set.
+   */
+  boolean hasProvider();
+  /**
+   * <code>optional .Provider provider = 2;</code>
+   * @return The enum numeric value on the wire for provider.
+   */
+  int getProviderValue();
+  /**
+   * <code>optional .Provider provider = 2;</code>
+   * @return The provider.
+   */
+  org.generic.Provider getProvider();
 }

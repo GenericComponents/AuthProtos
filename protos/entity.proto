@@ -29,6 +29,10 @@ enum Success {
   TOKEN_REVOKED_SUCCESSFULLY = 5;
 }
 
+enum Provider {
+  GOOGLE = 0;
+}
+
 // Request objects
 message CreateUserRequest {
   string username = 1;
@@ -52,6 +56,7 @@ message UnauthenticatedUserRequest {
 
 message UserValidityCheckRequest {
   string accessToken = 1;
+  optional Provider provider = 2;
 }
 
 message TokenIssueRequest {

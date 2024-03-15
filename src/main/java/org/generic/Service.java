@@ -23,17 +23,17 @@ public final class Service {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rservice.proto\032\014entity.proto2\326\002\n\004Auth\0225" +
+      "\n\rservice.proto\032\014entity.proto2\334\002\n\004Auth\0225" +
       "\n\ncreateUser\022\022.CreateUserRequest\032\023.Creat" +
       "eUserResponse\0226\n\rresetUsername\022\025.ResetUs" +
       "ernameRequest\032\016.ResetResponse\0226\n\rresetPa" +
       "ssword\022\025.ResetPasswordRequest\032\016.ResetRes" +
-      "ponse\0226\n\ncheckValid\022\031.UserValidityCheckR" +
-      "equest\032\r.AuthResponse\0225\n\nissueToken\022\022.To" +
-      "kenIssueRequest\032\023.TokenIssueResponse\0228\n\013" +
-      "revokeToken\022\023.TokenRevokeRequest\032\024.Token" +
-      "RevokeResponseB\022\n\013org.genericP\001\240\001\001b\006prot" +
-      "o3"
+      "ponse\022<\n\020authenticateUser\022\031.UserValidity" +
+      "CheckRequest\032\r.AuthResponse\0225\n\nissueToke" +
+      "n\022\022.TokenIssueRequest\032\023.TokenIssueRespon" +
+      "se\0228\n\013revokeToken\022\023.TokenRevokeRequest\032\024" +
+      ".TokenRevokeResponseB\022\n\013org.genericP\001\240\001\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

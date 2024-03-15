@@ -17,6 +17,7 @@ private static final long serialVersionUID = 0L;
   }
   private UserValidityCheckRequest() {
     accessToken_ = "";
+    provider_ = 0;
   }
 
   @java.lang.Override
@@ -44,6 +45,7 @@ private static final long serialVersionUID = 0L;
             org.generic.UserValidityCheckRequest.class, org.generic.UserValidityCheckRequest.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ACCESSTOKEN_FIELD_NUMBER = 1;
   private volatile java.lang.Object accessToken_;
   /**
@@ -82,6 +84,32 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PROVIDER_FIELD_NUMBER = 2;
+  private int provider_;
+  /**
+   * <code>optional .Provider provider = 2;</code>
+   * @return Whether the provider field is set.
+   */
+  @java.lang.Override public boolean hasProvider() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>optional .Provider provider = 2;</code>
+   * @return The enum numeric value on the wire for provider.
+   */
+  @java.lang.Override public int getProviderValue() {
+    return provider_;
+  }
+  /**
+   * <code>optional .Provider provider = 2;</code>
+   * @return The provider.
+   */
+  @java.lang.Override public org.generic.Provider getProvider() {
+    @SuppressWarnings("deprecation")
+    org.generic.Provider result = org.generic.Provider.valueOf(provider_);
+    return result == null ? org.generic.Provider.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -99,6 +127,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessToken_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accessToken_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(2, provider_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -110,6 +141,10 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(accessToken_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accessToken_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(2, provider_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -128,6 +163,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getAccessToken()
         .equals(other.getAccessToken())) return false;
+    if (hasProvider() != other.hasProvider()) return false;
+    if (hasProvider()) {
+      if (provider_ != other.provider_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -141,6 +180,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ACCESSTOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getAccessToken().hashCode();
+    if (hasProvider()) {
+      hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+      hash = (53 * hash) + provider_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -271,6 +314,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       accessToken_ = "";
 
+      provider_ = 0;
+      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -297,7 +342,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.generic.UserValidityCheckRequest buildPartial() {
       org.generic.UserValidityCheckRequest result = new org.generic.UserValidityCheckRequest(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       result.accessToken_ = accessToken_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        to_bitField0_ |= 0x00000001;
+      }
+      result.provider_ = provider_;
+      result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
@@ -350,6 +402,9 @@ private static final long serialVersionUID = 0L;
         accessToken_ = other.accessToken_;
         onChanged();
       }
+      if (other.hasProvider()) {
+        setProvider(other.getProvider());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -381,6 +436,11 @@ private static final long serialVersionUID = 0L;
 
               break;
             } // case 10
+            case 16: {
+              provider_ = input.readEnum();
+              bitField0_ |= 0x00000001;
+              break;
+            } // case 16
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -396,6 +456,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object accessToken_ = "";
     /**
@@ -469,6 +530,67 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       accessToken_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int provider_ = 0;
+    /**
+     * <code>optional .Provider provider = 2;</code>
+     * @return Whether the provider field is set.
+     */
+    @java.lang.Override public boolean hasProvider() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional .Provider provider = 2;</code>
+     * @return The enum numeric value on the wire for provider.
+     */
+    @java.lang.Override public int getProviderValue() {
+      return provider_;
+    }
+    /**
+     * <code>optional .Provider provider = 2;</code>
+     * @param value The enum numeric value on the wire for provider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProviderValue(int value) {
+      bitField0_ |= 0x00000001;
+      provider_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .Provider provider = 2;</code>
+     * @return The provider.
+     */
+    @java.lang.Override
+    public org.generic.Provider getProvider() {
+      @SuppressWarnings("deprecation")
+      org.generic.Provider result = org.generic.Provider.valueOf(provider_);
+      return result == null ? org.generic.Provider.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>optional .Provider provider = 2;</code>
+     * @param value The provider to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProvider(org.generic.Provider value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000001;
+      provider_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>optional .Provider provider = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProvider() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      provider_ = 0;
       onChanged();
       return this;
     }

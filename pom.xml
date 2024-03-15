@@ -6,12 +6,12 @@
 
 	<groupId>org.generic</groupId>
 	<artifactId>auth</artifactId>
-	<version>1.2.0</version>
+	<version>1.2.1</version>
 
 	<properties>
-		<java.version>17</java.version>
-		<maven.compiler.source>17</maven.compiler.source>
-		<maven.compiler.target>17</maven.compiler.target>
+		<java.version>21</java.version>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
 		<grpc.java.version>1.60.0</grpc.java.version>
 		<tomcat.annotations.version>6.0.53</tomcat.annotations.version>
 		<jackson.databind.version>2.14.2</jackson.databind.version>

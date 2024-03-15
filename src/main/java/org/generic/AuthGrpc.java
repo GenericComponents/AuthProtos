@@ -109,34 +109,34 @@ public final class AuthGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<org.generic.UserValidityCheckRequest,
-      org.generic.AuthResponse> getCheckValidMethod;
+      org.generic.AuthResponse> getAuthenticateUserMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "checkValid",
+      fullMethodName = SERVICE_NAME + '/' + "authenticateUser",
       requestType = org.generic.UserValidityCheckRequest.class,
       responseType = org.generic.AuthResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<org.generic.UserValidityCheckRequest,
-      org.generic.AuthResponse> getCheckValidMethod() {
-    io.grpc.MethodDescriptor<org.generic.UserValidityCheckRequest, org.generic.AuthResponse> getCheckValidMethod;
-    if ((getCheckValidMethod = AuthGrpc.getCheckValidMethod) == null) {
+      org.generic.AuthResponse> getAuthenticateUserMethod() {
+    io.grpc.MethodDescriptor<org.generic.UserValidityCheckRequest, org.generic.AuthResponse> getAuthenticateUserMethod;
+    if ((getAuthenticateUserMethod = AuthGrpc.getAuthenticateUserMethod) == null) {
       synchronized (AuthGrpc.class) {
-        if ((getCheckValidMethod = AuthGrpc.getCheckValidMethod) == null) {
-          AuthGrpc.getCheckValidMethod = getCheckValidMethod =
+        if ((getAuthenticateUserMethod = AuthGrpc.getAuthenticateUserMethod) == null) {
+          AuthGrpc.getAuthenticateUserMethod = getAuthenticateUserMethod =
               io.grpc.MethodDescriptor.<org.generic.UserValidityCheckRequest, org.generic.AuthResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "checkValid"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "authenticateUser"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.generic.UserValidityCheckRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   org.generic.AuthResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthMethodDescriptorSupplier("checkValid"))
+              .setSchemaDescriptor(new AuthMethodDescriptorSupplier("authenticateUser"))
               .build();
         }
       }
     }
-    return getCheckValidMethod;
+    return getAuthenticateUserMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<org.generic.TokenIssueRequest,
@@ -272,9 +272,9 @@ public final class AuthGrpc {
 
     /**
      */
-    public void checkValid(org.generic.UserValidityCheckRequest request,
+    public void authenticateUser(org.generic.UserValidityCheckRequest request,
         io.grpc.stub.StreamObserver<org.generic.AuthResponse> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCheckValidMethod(), responseObserver);
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAuthenticateUserMethod(), responseObserver);
     }
 
     /**
@@ -315,12 +315,12 @@ public final class AuthGrpc {
                 org.generic.ResetResponse>(
                   this, METHODID_RESET_PASSWORD)))
           .addMethod(
-            getCheckValidMethod(),
+            getAuthenticateUserMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
                 org.generic.UserValidityCheckRequest,
                 org.generic.AuthResponse>(
-                  this, METHODID_CHECK_VALID)))
+                  this, METHODID_AUTHENTICATE_USER)))
           .addMethod(
             getIssueTokenMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -379,10 +379,10 @@ public final class AuthGrpc {
 
     /**
      */
-    public void checkValid(org.generic.UserValidityCheckRequest request,
+    public void authenticateUser(org.generic.UserValidityCheckRequest request,
         io.grpc.stub.StreamObserver<org.generic.AuthResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCheckValidMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getAuthenticateUserMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -439,9 +439,9 @@ public final class AuthGrpc {
 
     /**
      */
-    public org.generic.AuthResponse checkValid(org.generic.UserValidityCheckRequest request) {
+    public org.generic.AuthResponse authenticateUser(org.generic.UserValidityCheckRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCheckValidMethod(), getCallOptions(), request);
+          getChannel(), getAuthenticateUserMethod(), getCallOptions(), request);
     }
 
     /**
@@ -499,10 +499,10 @@ public final class AuthGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<org.generic.AuthResponse> checkValid(
+    public com.google.common.util.concurrent.ListenableFuture<org.generic.AuthResponse> authenticateUser(
         org.generic.UserValidityCheckRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCheckValidMethod(), getCallOptions()), request);
+          getChannel().newCall(getAuthenticateUserMethod(), getCallOptions()), request);
     }
 
     /**
@@ -525,7 +525,7 @@ public final class AuthGrpc {
   private static final int METHODID_CREATE_USER = 0;
   private static final int METHODID_RESET_USERNAME = 1;
   private static final int METHODID_RESET_PASSWORD = 2;
-  private static final int METHODID_CHECK_VALID = 3;
+  private static final int METHODID_AUTHENTICATE_USER = 3;
   private static final int METHODID_ISSUE_TOKEN = 4;
   private static final int METHODID_REVOKE_TOKEN = 5;
 
@@ -558,8 +558,8 @@ public final class AuthGrpc {
           serviceImpl.resetPassword((org.generic.ResetPasswordRequest) request,
               (io.grpc.stub.StreamObserver<org.generic.ResetResponse>) responseObserver);
           break;
-        case METHODID_CHECK_VALID:
-          serviceImpl.checkValid((org.generic.UserValidityCheckRequest) request,
+        case METHODID_AUTHENTICATE_USER:
+          serviceImpl.authenticateUser((org.generic.UserValidityCheckRequest) request,
               (io.grpc.stub.StreamObserver<org.generic.AuthResponse>) responseObserver);
           break;
         case METHODID_ISSUE_TOKEN:
@@ -634,7 +634,7 @@ public final class AuthGrpc {
               .addMethod(getCreateUserMethod())
               .addMethod(getResetUsernameMethod())
               .addMethod(getResetPasswordMethod())
-              .addMethod(getCheckValidMethod())
+              .addMethod(getAuthenticateUserMethod())
               .addMethod(getIssueTokenMethod())
               .addMethod(getRevokeTokenMethod())
               .build();
