@@ -27,11 +27,6 @@ private static final long serialVersionUID = 0L;
     return new ResetUsernameRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.generic.Entity.internal_static_ResetUsernameRequest_descriptor;
@@ -46,7 +41,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int USERNAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object username_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object username_ = "";
   /**
    * <code>string username = 1;</code>
    * @return The username.
@@ -84,7 +80,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NEWUSERNAME_FIELD_NUMBER = 2;
-  private volatile java.lang.Object newUsername_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object newUsername_ = "";
   /**
    * <code>string newUsername = 2;</code>
    * @return The newUsername.
@@ -239,11 +236,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.generic.ResetUsernameRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.generic.ResetUsernameRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -318,10 +317,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       username_ = "";
-
       newUsername_ = "";
-
       return this;
     }
 
@@ -348,10 +346,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.generic.ResetUsernameRequest buildPartial() {
       org.generic.ResetUsernameRequest result = new org.generic.ResetUsernameRequest(this);
-      result.username_ = username_;
-      result.newUsername_ = newUsername_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.generic.ResetUsernameRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.username_ = username_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.newUsername_ = newUsername_;
+      }
     }
 
     @java.lang.Override
@@ -400,10 +407,12 @@ private static final long serialVersionUID = 0L;
       if (other == org.generic.ResetUsernameRequest.getDefaultInstance()) return this;
       if (!other.getUsername().isEmpty()) {
         username_ = other.username_;
+        bitField0_ |= 0x00000001;
         onChanged();
       }
       if (!other.getNewUsername().isEmpty()) {
         newUsername_ = other.newUsername_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -434,12 +443,12 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               username_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 10
             case 18: {
               newUsername_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -457,6 +466,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private java.lang.Object username_ = "";
     /**
@@ -499,11 +509,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUsername(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -512,8 +520,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearUsername() {
-      
       username_ = getDefaultInstance().getUsername();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -524,12 +532,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setUsernameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       username_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -575,11 +581,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNewUsername(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       newUsername_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -588,8 +592,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearNewUsername() {
-      
       newUsername_ = getDefaultInstance().getNewUsername();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -600,12 +604,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNewUsernameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       newUsername_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

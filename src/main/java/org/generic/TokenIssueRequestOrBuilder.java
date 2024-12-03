@@ -37,5 +37,5 @@ public interface TokenIssueRequestOrBuilder extends
    */
   org.generic.TokenIssueRequest.AuthenticatedUserRequestOrBuilder getAuthenticatedOrBuilder();
 
-  public org.generic.TokenIssueRequest.RequestCase getRequestCase();
+  org.generic.TokenIssueRequest.RequestCase getRequestCase();
 }
