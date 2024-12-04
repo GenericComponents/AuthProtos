@@ -25,11 +25,6 @@ private static final long serialVersionUID = 0L;
     return new TokenIssueRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.generic.Entity.internal_static_TokenIssueRequest_descriptor;
@@ -82,11 +77,6 @@ private static final long serialVersionUID = 0L;
       return new AuthenticatedUserRequest();
     }
 
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return org.generic.Entity.internal_static_TokenIssueRequest_AuthenticatedUserRequest_descriptor;
@@ -101,7 +91,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public static final int REFRESHTOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object refreshToken_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object refreshToken_ = "";
     /**
      * <code>string refreshToken = 1;</code>
      * @return The refreshToken.
@@ -246,11 +237,13 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
+
     public static org.generic.TokenIssueRequest.AuthenticatedUserRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
+
     public static org.generic.TokenIssueRequest.AuthenticatedUserRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -325,8 +318,8 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         refreshToken_ = "";
-
         return this;
       }
 
@@ -353,9 +346,16 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public org.generic.TokenIssueRequest.AuthenticatedUserRequest buildPartial() {
         org.generic.TokenIssueRequest.AuthenticatedUserRequest result = new org.generic.TokenIssueRequest.AuthenticatedUserRequest(this);
-        result.refreshToken_ = refreshToken_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(org.generic.TokenIssueRequest.AuthenticatedUserRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.refreshToken_ = refreshToken_;
+        }
       }
 
       @java.lang.Override
@@ -404,6 +404,7 @@ private static final long serialVersionUID = 0L;
         if (other == org.generic.TokenIssueRequest.AuthenticatedUserRequest.getDefaultInstance()) return this;
         if (!other.getRefreshToken().isEmpty()) {
           refreshToken_ = other.refreshToken_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -434,7 +435,7 @@ private static final long serialVersionUID = 0L;
                 break;
               case 10: {
                 refreshToken_ = input.readStringRequireUtf8();
-
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
               default: {
@@ -452,6 +453,7 @@ private static final long serialVersionUID = 0L;
         } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object refreshToken_ = "";
       /**
@@ -494,11 +496,9 @@ private static final long serialVersionUID = 0L;
        */
       public Builder setRefreshToken(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         refreshToken_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -507,8 +507,8 @@ private static final long serialVersionUID = 0L;
        * @return This builder for chaining.
        */
       public Builder clearRefreshToken() {
-        
         refreshToken_ = getDefaultInstance().getRefreshToken();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -519,12 +519,10 @@ private static final long serialVersionUID = 0L;
        */
       public Builder setRefreshTokenBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         refreshToken_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -593,6 +591,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private int requestCase_ = 0;
+  @SuppressWarnings("serial")
   private java.lang.Object request_;
   public enum RequestCase
       implements com.google.protobuf.Internal.EnumLite,
@@ -832,11 +831,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.generic.TokenIssueRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.generic.TokenIssueRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -911,6 +912,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (unauthenticatedBuilder_ != null) {
         unauthenticatedBuilder_.clear();
       }
@@ -945,23 +947,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.generic.TokenIssueRequest buildPartial() {
       org.generic.TokenIssueRequest result = new org.generic.TokenIssueRequest(this);
-      if (requestCase_ == 1) {
-        if (unauthenticatedBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = unauthenticatedBuilder_.build();
-        }
-      }
-      if (requestCase_ == 2) {
-        if (authenticatedBuilder_ == null) {
-          result.request_ = request_;
-        } else {
-          result.request_ = authenticatedBuilder_.build();
-        }
-      }
-      result.requestCase_ = requestCase_;
+      if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.generic.TokenIssueRequest result) {
+      int from_bitField0_ = bitField0_;
+    }
+
+    private void buildPartialOneofs(org.generic.TokenIssueRequest result) {
+      result.requestCase_ = requestCase_;
+      result.request_ = this.request_;
+      if (requestCase_ == 1 &&
+          unauthenticatedBuilder_ != null) {
+        result.request_ = unauthenticatedBuilder_.build();
+      }
+      if (requestCase_ == 2 &&
+          authenticatedBuilder_ != null) {
+        result.request_ = authenticatedBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1091,6 +1097,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         org.generic.UnauthenticatedUserRequest, org.generic.UnauthenticatedUserRequest.Builder, org.generic.UnauthenticatedUserRequestOrBuilder> unauthenticatedBuilder_;
@@ -1230,7 +1237,7 @@ private static final long serialVersionUID = 0L;
         request_ = null;
       }
       requestCase_ = 1;
-      onChanged();;
+      onChanged();
       return unauthenticatedBuilder_;
     }
 
@@ -1372,7 +1379,7 @@ private static final long serialVersionUID = 0L;
         request_ = null;
       }
       requestCase_ = 2;
-      onChanged();;
+      onChanged();
       return authenticatedBuilder_;
     }
     @java.lang.Override

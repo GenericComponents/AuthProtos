@@ -27,11 +27,6 @@ private static final long serialVersionUID = 0L;
     return new ResetResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return org.generic.Entity.internal_static_ResetResponse_descriptor;
@@ -46,7 +41,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 1;
-  private int status_;
+  private int status_ = 0;
   /**
    * <code>.Success status = 1;</code>
    * @return The enum numeric value on the wire for status.
@@ -59,13 +54,13 @@ private static final long serialVersionUID = 0L;
    * @return The status.
    */
   @java.lang.Override public org.generic.Success getStatus() {
-    @SuppressWarnings("deprecation")
-    org.generic.Success result = org.generic.Success.valueOf(status_);
+    org.generic.Success result = org.generic.Success.forNumber(status_);
     return result == null ? org.generic.Success.UNRECOGNIZED : result;
   }
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
-  private volatile java.lang.Object message_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object message_ = "";
   /**
    * <code>string message = 2;</code>
    * @return The message.
@@ -220,11 +215,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static org.generic.ResetResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static org.generic.ResetResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -299,10 +296,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       status_ = 0;
-
       message_ = "";
-
       return this;
     }
 
@@ -329,10 +325,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public org.generic.ResetResponse buildPartial() {
       org.generic.ResetResponse result = new org.generic.ResetResponse(this);
-      result.status_ = status_;
-      result.message_ = message_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(org.generic.ResetResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.status_ = status_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.message_ = message_;
+      }
     }
 
     @java.lang.Override
@@ -384,6 +389,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -414,12 +420,12 @@ private static final long serialVersionUID = 0L;
               break;
             case 8: {
               status_ = input.readEnum();
-
+              bitField0_ |= 0x00000001;
               break;
             } // case 8
             case 18: {
               message_ = input.readStringRequireUtf8();
-
+              bitField0_ |= 0x00000002;
               break;
             } // case 18
             default: {
@@ -437,6 +443,7 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int bitField0_;
 
     private int status_ = 0;
     /**
@@ -452,8 +459,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setStatusValue(int value) {
-      
       status_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -463,8 +470,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public org.generic.Success getStatus() {
-      @SuppressWarnings("deprecation")
-      org.generic.Success result = org.generic.Success.valueOf(status_);
+      org.generic.Success result = org.generic.Success.forNumber(status_);
       return result == null ? org.generic.Success.UNRECOGNIZED : result;
     }
     /**
@@ -476,7 +482,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000001;
       status_ = value.getNumber();
       onChanged();
       return this;
@@ -486,7 +492,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       status_ = 0;
       onChanged();
       return this;
@@ -533,11 +539,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMessage(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -546,8 +550,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMessage() {
-      
       message_ = getDefaultInstance().getMessage();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -558,12 +562,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setMessageBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       message_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

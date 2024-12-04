@@ -6,47 +6,19 @@
 
 	<groupId>org.generic</groupId>
 	<artifactId>auth</artifactId>
-	<version>1.2.1</version>
+	<version>1.2.2</version>
 
 	<properties>
-		<java.version>21</java.version>
-		<maven.compiler.source>21</maven.compiler.source>
-		<maven.compiler.target>21</maven.compiler.target>
-		<grpc.java.version>1.60.0</grpc.java.version>
-		<tomcat.annotations.version>6.0.53</tomcat.annotations.version>
-		<jackson.databind.version>2.14.2</jackson.databind.version>
+		<java.version>23</java.version>
+		<maven.compiler.source>23</maven.compiler.source>
+		<maven.compiler.target>23</maven.compiler.target>
+		<grpc.java.version>1.68.2</grpc.java.version>
 	</properties>
 
 	<dependencies>
-		<!--	GRPC dependencies 	-->
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>annotations-api</artifactId>
-			<version>${tomcat.annotations.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>${jackson.databind.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>io.grpc</groupId>
 			<artifactId>grpc-protobuf</artifactId>
-			<version>${grpc.java.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.grpc</groupId>
-			<artifactId>grpc-netty</artifactId>
-			<version>${grpc.java.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.grpc</groupId>
-			<artifactId>grpc-stub</artifactId>
 			<version>${grpc.java.version}</version>
 		</dependency>
 	</dependencies>
