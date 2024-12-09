@@ -16,7 +16,7 @@ jobs:
           run: make
 
         - name: Commit and Push Changes
-          uses: stefanzweifel/git-auto-commit-action@v4
+          uses: stefanzweifel/git-auto-commit-action@v5
           with:
             commit_message: "Automated commit from GitHub Action for protoc changes"
             branch: ${{ github.ref_name }}
